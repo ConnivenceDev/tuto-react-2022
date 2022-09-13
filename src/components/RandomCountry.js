@@ -2,12 +2,6 @@ import React, { useEffect, useState } from 'react';
 
 const RandomCountry = ({ country }) => {
 
-
-
-  useEffect(() => {
-
-  }, [])
-
   return (
     < div className='random-fiche' >
       {

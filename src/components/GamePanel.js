@@ -17,7 +17,7 @@ const GamePanel = () => {
         }
 
       })
-  })
+  }, [])
   return (
     <div className='game_panel'>
       <h2>{score}</h2>
