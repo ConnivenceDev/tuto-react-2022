@@ -12,6 +12,13 @@ const Nav = () => {
 
                     </li>
                 </NavLink>
+                <NavLink to="/game" className={(nav) => (nav.isActive ? "nav-active" : "")}>
+                    <li>
+
+                        Défi
+
+                    </li>
+                </NavLink>
                 <NavLink to="/about" className={(nav) => (nav.isActive ? "nav-active" : "")}>
                     <li>
 
