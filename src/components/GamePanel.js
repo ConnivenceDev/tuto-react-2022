@@ -31,7 +31,7 @@ const GamePanel = () => {
       <input type="text" id="answer" onChange={(ev) => {
         let answer = ev.target.value.toLowerCase();
 
-        if (answer == data[randomIndex].translations.fra.common.toLowerCase()) {
+        if (answer === data[randomIndex].translations.fra.common.toLowerCase()) {
           setRandomIndex(Math.floor(Math.random() * data.length));
           ev.target.value = "";
           setScore((value) => (value += 1))
