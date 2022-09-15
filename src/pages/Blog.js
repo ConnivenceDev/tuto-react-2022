@@ -1,10 +1,22 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useState, useEffect } from 'react';
 import FormMessage from '../components/FormMessage';
-import ListMessages from '../components/ListMessages';
+import Message from '../components/Message';
 import Logo from '../components/Logo';
 import Nav from '../components/Nav';
 
 const Blog = () => {
+
+  const [comments, setComments] = useState([]);
+
+  const getData = () => {
+    axios.get("http://localhost:3004/articles")
+      .then((res) => {
+        setComments(res.data)
+      })
+  }
+
+  useEffect(() => getData(), []);
 
   return (
     <div className='blog-container'>
@@ -14,9 +26,15 @@ const Blog = () => {
         Blog
       </h1>
 
-      <FormMessage />
+      <FormMessage getData={getData} />
 
-      <ListMessages />
+      <ul>
+        {
+          comments
+            .sort((a, b) => (b.date - a.date))
+            .map((comment) => (<Message content={comment} key={comment.id} />))
+        }
+      </ul>
 
     </div>
   );
