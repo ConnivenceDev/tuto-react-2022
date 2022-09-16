@@ -59,27 +59,27 @@ const Pairs = () => {
   }
 
   const genereGrid = (countries) => {
-    let random_value = 0;
-    let array_cards = [];
+    let randomValue = 0;
+    let arrayCards = [];
     for (let i = 0; i < 10; i++) {
-      random_value = Math.floor(Math.random() * countries.length);
+      randomValue = Math.floor(Math.random() * countries.length);
 
-      while (array_cards.indexOf(countries[random_value]) > -1) {
-        random_value = Math.floor(Math.random() * countries.length);
+      while (arrayCards.indexOf(countries[randomValue]) > -1) {
+        randomValue = Math.floor(Math.random() * countries.length);
       }
 
-      array_cards.push({
-        flag: countries[random_value].flags.svg,
+      arrayCards.push({
+        flag: countries[randomValue].flags.svg,
         state: 0
       });
-      array_cards.push({
-        flag: countries[random_value].flags.svg,
+      arrayCards.push({
+        flag: countries[randomValue].flags.svg,
         state: 0
       });
 
     }
 
-    return array_cards.sort(() => Math.random() - 0.5);
+    return arrayCards.sort(() => Math.random() - 0.5);
   }
 
   useEffect(() => {
